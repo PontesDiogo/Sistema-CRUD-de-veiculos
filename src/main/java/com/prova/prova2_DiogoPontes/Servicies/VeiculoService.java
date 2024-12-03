@@ -39,4 +39,9 @@ public class VeiculoService {
         return VeiculoMapper.toDto(newVeiculo);
     }
 
+    public VeiculoResponse saveSemValidacao(VeiculoRequest veiculo){
+        Veiculo newVeiculo = repository.save(VeiculoMapper.toEntity(veiculo));
+        return VeiculoMapper.toDto(newVeiculo);
+    }
+
 }
