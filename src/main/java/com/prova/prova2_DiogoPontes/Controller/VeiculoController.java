@@ -9,11 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.prova.prova2_DiogoPontes.Entities.Veiculo;
 import com.prova.prova2_DiogoPontes.Servicies.VeiculoService;
+import com.prova.prova2_DiogoPontes.dtos.VeiculoRequest;
 import com.prova.prova2_DiogoPontes.dtos.VeiculoResponse;
+
+import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -35,5 +41,13 @@ public class VeiculoController {
         service.deleteVeiculo(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping()
+    public ResponseEntity<VeiculoResponse> saveVeiculo(@Valid @RequestBody VeiculoRequest veiculo) {
+        VeiculoResponse newVeiculo = service.save(veiculo);
+        
+        return ResponseEntity.created(null).body(newVeiculo);
+    }
+    
 
 }

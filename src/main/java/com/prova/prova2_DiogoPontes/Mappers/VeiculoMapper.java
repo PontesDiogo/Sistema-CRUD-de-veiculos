@@ -8,13 +8,13 @@ import jakarta.persistence.EntityNotFoundException;
 
 public class VeiculoMapper {
 
-    public static Veiculo toEntity(VeiculoRequest veiculoRequest) {
+    public static Veiculo toEntity(VeiculoRequest veiculo2) {
         Veiculo veiculo = new Veiculo();
-        veiculo.setAno(veiculoRequest.ano());
-        veiculo.setCor(veiculoRequest.cor());
-        veiculo.setMarca(veiculoRequest.marca());
-        veiculo.setModelo(veiculoRequest.modelo());
-        veiculo.setPlaca(veiculoRequest.placa());
+        veiculo.setAno(veiculo2.ano());
+        veiculo.setCor(veiculo2.cor());
+        veiculo.setMarca(veiculo2.marca());
+        veiculo.setModelo(veiculo2.modelo());
+        veiculo.setPlaca(veiculo2.placa());
 
         return veiculo;
 

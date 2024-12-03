@@ -6,8 +6,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.prova.prova2_DiogoPontes.Entities.Veiculo;
 import com.prova.prova2_DiogoPontes.Mappers.VeiculoMapper;
 import com.prova.prova2_DiogoPontes.Repositories.VeiculoRepository;
+import com.prova.prova2_DiogoPontes.dtos.VeiculoRequest;
 import com.prova.prova2_DiogoPontes.dtos.VeiculoResponse;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -31,5 +33,10 @@ public class VeiculoService {
 
         }
     } 
+
+    public VeiculoResponse save (VeiculoRequest veiculo){
+        Veiculo newVeiculo = repository.save(VeiculoMapper.toEntity(veiculo));
+        return VeiculoMapper.toDto(newVeiculo);
+    }
 
 }
