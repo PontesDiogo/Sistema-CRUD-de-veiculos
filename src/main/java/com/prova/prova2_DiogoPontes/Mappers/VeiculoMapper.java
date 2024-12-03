@@ -7,15 +7,6 @@ import com.prova.prova2_DiogoPontes.dtos.VeiculoResponse;
 import jakarta.persistence.EntityNotFoundException;
 
 public class VeiculoMapper {
-    public static VeiculoResponse toDto(Veiculo veiculo) {
-        return new VeiculoResponse(
-                veiculo.getId(),
-                veiculo.getPlaca(),
-                veiculo.getMarca(),
-                veiculo.getModelo(),
-                veiculo.getAno(),
-                veiculo.getCor());
-    }
 
     public static Veiculo toEntity(VeiculoRequest veiculoRequest) {
         Veiculo veiculo = new Veiculo();
@@ -29,4 +20,17 @@ public class VeiculoMapper {
 
     }
 
+    public static VeiculoResponse toDto(Veiculo newVeiculo) {
+
+        Veiculo veiculo = newVeiculo;
+
+        return new VeiculoResponse(
+                newVeiculo.getId(),
+                newVeiculo.getPlaca(),
+                newVeiculo.getMarca(),
+                newVeiculo.getModelo(),
+                newVeiculo.getCor(),
+                newVeiculo.getAno());
+
+    }
 }
