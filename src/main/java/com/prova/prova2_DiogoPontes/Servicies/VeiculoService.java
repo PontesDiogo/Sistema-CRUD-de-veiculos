@@ -10,6 +10,8 @@ import com.prova.prova2_DiogoPontes.Mappers.VeiculoMapper;
 import com.prova.prova2_DiogoPontes.Repositories.VeiculoRepository;
 import com.prova.prova2_DiogoPontes.dtos.VeiculoResponse;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class VeiculoService {
 
@@ -19,5 +21,15 @@ public class VeiculoService {
     public List<VeiculoResponse> getAllVeiculo() {
         return repository.findAll().stream().map(v -> VeiculoMapper.toDto(v)).collect(Collectors.toList());
     }
+
+    
+    public void deleteVeiculo(long id){
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Veiculo not found");
+
+        }
+    } 
 
 }
