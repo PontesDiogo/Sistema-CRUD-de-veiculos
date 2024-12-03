@@ -48,7 +48,13 @@ public class Veiculo implements Serializable {
     }
     public void setAno(String ano) {
         this.ano = ano;
+
+
     }
+
+
+
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -71,6 +77,12 @@ public class Veiculo implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
+    }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 
