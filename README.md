@@ -56,12 +56,12 @@ O desenvolvimento seguiu os passos abaixo, cada um representado por um commit:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/prova2-seunome.git
+   git clone https://https://github.com/PontesDiogo/Sistema-CRUD-de-veiculos
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd prova2-seunome
+   cd prova2-DiogoPontes
    ```
 
 3. Compile e execute a aplicação:
